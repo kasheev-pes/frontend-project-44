@@ -1,3 +1,5 @@
-import evening from '../src/even.js';
+import greeting from '../src/cli.js';
+import evening from '../src/games/even.js';
 
-evening();
+const user = greeting();
+evening(user);
