@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import getRandomInt from '../random/getRandomInt.js';
-import { tryAgain } from '../messages.js';
+import { congratulations, tryAgain } from '../messages.js';
 
 const getRandomExpression = () => {
     const operands = ['+', '-', '*'];
@@ -30,16 +30,16 @@ const calculating = (user = 'Jonh Dou') => {
         const result = getRandomExpression();
         const anwser = readlineSync.question('Your anwser: ');
 
-        if (+anwser === result) {
-            console.log('Correct!');
-            counter += 1;
-        } else {
+        if (+anwser !== result) {
             tryAgain({ result: anwser, trueResult: result, user });
             return;
         }
+
+        console.log('Correct!');
+        counter += 1;
     }
 
-    console.log(`Congratulations, ${user}!`);
+    congratulations({ user: user })
 };
 
 export default calculating;

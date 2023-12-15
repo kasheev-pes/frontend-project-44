@@ -7,6 +7,11 @@ const tryAgain = ({
     console.log(`Let's try again, ${user}!`);
 };
 
+const congratulations = ({user}) => {
+    console.log(`Congratulations, ${user}!`);
+}
+
 export {
     tryAgain,
+    congratulations,
 };
